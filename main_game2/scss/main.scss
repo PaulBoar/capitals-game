@@ -1,0 +1,200 @@
+@mixin tooltipSet {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -3rem;
+  left: 50%;
+  padding: 0.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #333;
+  border: 0.5px solid white;
+  white-space: nowrap;
+  // opacity: 0;
+  // transition: opacity 1s ease-in-out;
+  z-index: 10;
+}
+
+$textStroke: 0.75px white;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #b1bfd8;
+background-image: linear-gradient(315deg, #b1bfd8 0%, #6782b4 74%);
+
+  height: 100vh;
+  font-family: 'Kanit', sans-serif;
+}
+.game {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  width: 80vw;
+  height: 80vh;
+  margin: 80px auto;
+  border-radius: 12px;
+  border: 3px solid burlywood;
+  padding: 1.5rem 0;
+  overflow: hidden;
+  // background-color: #5de6de;
+  // background-image: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);
+  background-image: url(../imgs/ogwen-6209977_1920.jpg);
+  z-index: 2;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -2;
+  }
+}
+.main-container {
+  display: flex;
+  justify-content: space-around;
+  width: 90vw;
+  height: 80vh;
+  background-color: darkseagreen;
+}
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  // height: 70vh;
+  width: 50vw;
+  padding: 20px 0;
+  h4,
+  p {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: gainsboro;
+  }
+}
+.btns {
+  margin-top: 0.5rem;
+  .btn {
+    padding: 0.5em;
+    margin: 1rem 0 2rem;
+    font-size: 1.5rem;
+    width: 10rem;
+    height: 4rem;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 1px solid black;
+    box-shadow: 3px 3px 10px black;
+
+    &:active {
+      box-shadow: 2px 2px 5px gold;
+    }
+    &:hover::after {
+      @include tooltipSet();
+    }
+  }
+  .toss__btn {
+    position: relative;
+    margin-right: 1rem;
+
+    &:hover::after {
+      @include tooltipSet();
+    }
+  }
+}
+
+.img-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  .img {
+    position: relative;
+    z-index: -1;
+    &::after {
+      content: 'e';
+      position: absolute;
+      // display: block;
+      font-size: 1.5rem;
+      bottom: 2rem;
+      width: 100px;
+      height: 50px;
+      background-color: forestgreen;
+      z-index: 2;
+    }
+  }
+}
+.capital__draw {
+  height: 40%;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+.result {
+  color: honeydew;
+  font-size: 3.5em;
+  text-align: center;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.input-info__box {
+  text-align: center;
+}
+
+.capital__input {
+  background-color: lavender;
+  border-radius: 5px;
+  border: 0.08rem solid black;
+  padding: 0.5rem;
+  transform: scale(1.5);
+  &:focus {
+    outline: none;
+  }
+}
+
+.draw__outcome {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  color: white;
+  text-align: center;
+  -webkit-text-stroke: $textStroke;
+}
+
+.score {
+  font-size: 2.5rem;
+  padding: 5px 15px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.6);
+  -webkit-text-stroke: $textStroke;
+}
+
+.end__score {
+  width: 70%;
+  height: 60%;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  background-color: #f6f0c4;
+  background-image: linear-gradient(315deg, #f6f0c4 0%, #d99ec9 74%);
+  display: none;
+  h2 {
+    font-size: 2.5rem;
+    margin: 2rem 0;
+  }
+  p {
+    color: black;
+  }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,700;1,100&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+<a href="../css_cards/cards.html">c</a>
+<div class="game">
+ <div class="container">
+  
+  <div class="capital__draw">
+  <h4>Capital of</h4>
+  <div class="result"></div>
+  <p>is</p>
+</div>
+  <div class="input-info__box">
+   <input type="text" class="capital__input" placeholder="type the capital name">
+  <div class="draw__outcome"></div>
+</div>
+  <div class="btns">
+   <button class="btn toss__btn" data-tooltip="let's see what country you draw 😏">toss a coin</button>
+  <button class="btn check__btn" data-tooltip="guess it's right">check</button>
+  </div>
+  <span class="score"></span>
+ </div>
+ <div class="container">
+  <img src="./imgs/detective.png"  style="max-height:600px; max-width: 70%;" class="img right-container-to-hide" alt="">
+  <div class="end__score">
+   <h2>Congratulation!</h2>
+   <p>you guessed <br> <span class="guessed-capitals"></span><br>
+     out of <span class="all__capitals"></span> countries</p>
+  </div>
+ </div>
+  
+</div>
+
+
+ <script src="./app.js"></script>
+</body>
+</html>
